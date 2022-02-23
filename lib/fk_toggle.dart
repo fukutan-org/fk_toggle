@@ -9,17 +9,16 @@ class FkToggle extends StatefulWidget {
       {Key? key,
         required this.width,
         required this.height,
-        required this.size,
         this.cornerRadius = 10,
         this.backgroundColor = Colors.black26,
         this.selectedColor = Colors.blue,
         this.disabledElementColor = Colors.black54,
         this.enabledElementColor = Colors.white,
-        this.fontSize = 16,
+        this.fontSize = 16.0,
         this.icons,
-        this.labels,
+        required this.labels,
         this.onSelected})
-      : assert(size >= 2),
+      : assert(labels.length >= 2),
         assert(width > 0),
         assert(height > 0),
         assert(cornerRadius > 0),
@@ -30,15 +29,14 @@ class FkToggle extends StatefulWidget {
   final double height;
 
   /// required size >= 2
-  final int size;
   final double cornerRadius;
   final Color backgroundColor;
   final Color selectedColor;
   final Color disabledElementColor;
   final Color enabledElementColor;
-  final int fontSize;
-  final List<Icon>? icons;
-  final List<String>? labels;
+  final double fontSize;
+  final List<Icon?>? icons;
+  final List<String> labels;
   final OnSelected? onSelected;
 
   @override
@@ -46,14 +44,11 @@ class FkToggle extends StatefulWidget {
 }
 
 class _State extends State<FkToggle> {
-  // late final double _width;
   late final Widget _selectedSwitch;
   late final BorderRadius _roundedRadius;
 
   double _leftMargin = 0.0;
   int _selectedIndex = 0;
-
-  // AnimationController slideAnimation =
 
   @override
   void initState() {
@@ -95,7 +90,7 @@ class _State extends State<FkToggle> {
           debugPrint('tapDown');
         },
         child: SizedBox(
-          width: widget.width * widget.size,
+          width: widget.width * widget.labels.length,
           height: widget.height,
           child: Stack(
             children: [
@@ -108,7 +103,8 @@ class _State extends State<FkToggle> {
                   alignment: Alignment.center,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: _buildElements()),
+                      children: _buildLabels()
+                  ),
                 ),
               )
             ],
@@ -118,19 +114,35 @@ class _State extends State<FkToggle> {
     );
   }
 
-  List<Widget> _buildElements() {
+  List<Widget> _buildLabels() {
     final List<Widget> list = [];
-    widget.labels?.asMap().forEach((idx, label) {
-      final text = Expanded(
-          flex: 1,
-          child: Text(label,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: _selectedIndex == idx
-                      ? widget.enabledElementColor
-                      : widget.disabledElementColor)));
-      list.add(text);
+    widget.labels.asMap().forEach((idx, label) {
+      final child = Expanded(
+        flex: 1,
+        child: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            style: TextStyle(
+                fontSize: widget.fontSize,
+                color: _selectedIndex == idx
+                    ? widget.enabledElementColor
+                    : widget.disabledElementColor),
+            children: [
+              TextSpan(text: label),
+              WidgetSpan(child: _tryGet(widget.icons, idx) ?? const SizedBox())
+            ]
+          ),
+        )
+      );
+      list.add(child);
     });
     return list;
+  }
+
+  Icon? _tryGet(List<Icon?>? icons, int idx) {
+    if (icons != null && idx < icons.length) {
+      return icons[idx];
+    }
+    return null;
   }
 }
