@@ -1,6 +1,6 @@
 name: fk_toggle
 description: a new package is a toggle button widget.
-version: 0.0.1
+version: 0.1.0
 homepage:
 
 environment:
