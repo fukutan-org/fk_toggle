@@ -17,7 +17,8 @@ class FkToggleSample extends StatelessWidget {
           width: 50,
           height: 30,
           labels: const ['1', '2'],
-          onSelected: selected),
+          onSelected: selected
+      ),
       FkToggle(
           width: 100,
           height: 50,
@@ -84,11 +85,7 @@ class FkToggleSample extends StatelessWidget {
           children: toggles
               .map((e) => Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [e],
-                    ),
+                child: e,
               ))
               .toList(),
         ),
