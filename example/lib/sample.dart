@@ -17,6 +17,7 @@ class FkToggleSample extends StatelessWidget {
           width: 50,
           height: 30,
           labels: const ['1', '2'],
+          onSelected: selected
       ),
       FkToggle(
           width: 100,
