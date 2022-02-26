@@ -1,7 +1,7 @@
 name: fk_toggle
 description: This is simple flutter toggle button widget.
 version: 0.1.0
-homepage:
+homepage: https://github.com/fukutan-org/fk_toggle
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
