@@ -20,7 +20,7 @@ Supports show text labels and icons, Possible set multiple value to toggle ui, n
 Also you can customize size and colors as you like.
 
 
-## Screenshot of [SampleApp](https://github.com/fukutan-org/fk_toggle/tree/master/example,"SampleApp")
+## Screenshot of [SampleApp](https://github.com/fukutan-org/fk_toggle/tree/master/example)
 ![fk_toggle_image](https://user-images.githubusercontent.com/51870919/155354687-a01ddfb5-74d7-49da-80fd-9384fb0bdf32.png)
 
 ## Features
