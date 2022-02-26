@@ -5,20 +5,20 @@ import 'package:flutter/material.dart';
 typedef OnSelected = void Function(int idx, FkToggle instance);
 
 class FkToggle extends StatefulWidget {
-  const FkToggle(
-      {Key? key,
-        required this.width,
-        required this.height,
-        this.cornerRadius = 10,
-        this.backgroundColor = Colors.black26,
-        this.selectedColor = Colors.blue,
-        this.disabledElementColor = Colors.black54,
-        this.enabledElementColor = Colors.white,
-        this.fontSize = 16.0,
-        this.icons,
-        required this.labels,
-        this.onSelected})
-      : assert(labels.length >= 2),
+  const FkToggle({
+    Key? key,
+    required this.width,
+    required this.height,
+    required this.labels,
+    this.cornerRadius = 10,
+    this.backgroundColor = Colors.black26,
+    this.selectedColor = Colors.blue,
+    this.disabledElementColor = Colors.black54,
+    this.enabledElementColor = Colors.white,
+    this.fontSize = 16.0,
+    this.icons,
+    this.onSelected
+  }):   assert(labels.length >= 2),
         assert(width > 0),
         assert(height > 0),
         assert(cornerRadius > 0),
