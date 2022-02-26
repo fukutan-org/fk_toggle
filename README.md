@@ -33,7 +33,22 @@ Also you can customize size and colors as you like.
 
 ## How to install
 
-TODO:
+Add this to your package's pubspec.yaml file:
+
+```yaml
+dependencies:
+  fk_toggle: ^0.3.1
+```
+
+You can install packages from the command line with Flutter:
+```shell
+$ flutter pub get
+```
+
+Import in your project:
+```dart
+import 'package:fk_toggle/fk_toggle.dart';
+```
 
 ## Usage
 
