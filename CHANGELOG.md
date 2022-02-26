@@ -1,7 +1,7 @@
-## 0.1.0
+## [0.1.0] 2022-02-26
 
-Add sample app.
+Add Example project.
 
-## 0.0.1
+## [0.0.1] 2022-02-25
 
-create library project and
+create library project.
