@@ -24,19 +24,70 @@ class FkToggle extends StatefulWidget {
         assert(cornerRadius > 0),
         super(key: key);
 
-  /// width of a part of toggle switch
+  ///
+  /// Width of a toggle button length, warning: this is not full length!!<br>
+  /// example, width is 50.0 and labels are [1,2] that results of below.<br>
+  ///   [  1 (50.0) ][  2 (50.0) ]<br>
+  /// So makes a full length 100.0 size toggle buttons include 2 label texts.<br>
+  ///
   final double width;
+
+  ///
+  /// Height of toggle buttons.
+  ///
   final double height;
 
-  /// required size >= 2
-  final double cornerRadius;
-  final Color backgroundColor;
-  final Color selectedColor;
-  final Color disabledElementColor;
-  final Color enabledElementColor;
-  final double fontSize;
-  final List<Icon?>? icons;
+  ///
+  /// Required toggle button texts. Allow empty text.<br>
+  /// FkToggle(<br>
+  ///   <t>width: 50,<br>
+  ///   height: 30,<br>
+  ///   labels: const ['1', '2', '', '', '3', '4']<br>
+  /// )<br>
+  ///<br>
+  ///   Result [1][2][][][3][4], So Some toggles has empty text.<br>
+  ///   For example case of wants to set icons in empty label buttons.<br>
+  ///
   final List<String> labels;
+
+  ///
+  /// Typical 10 to 20, Recommended 5 to 30.
+  ///
+  final double cornerRadius;
+
+  ///
+  /// unselected toggle color
+  ///
+  final Color backgroundColor;
+
+  ///
+  /// selected toggle color
+  ///
+  final Color selectedColor;
+
+  ///
+  /// unselected label color
+  ///
+  final Color disabledElementColor;
+
+  ///
+  /// selected label color
+  ///
+  final Color enabledElementColor;
+
+  ///
+  /// font size of labels
+  ///
+  final double fontSize;
+
+  ///
+  /// Allow null value in lists,You can set an icon for any Toggl
+  ///
+  final List<Icon?>? icons;
+
+  ///
+  /// provide toggle change event, Provide index and instance
+  ///
   final OnSelected? onSelected;
 
   @override
