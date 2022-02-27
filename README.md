@@ -97,5 +97,6 @@ Scaffold(
 
 ## Contacts
 
-Feel free to work consultation.
+Feel free to send message.<br>
+Welcome to work consultation, or everything.
 fukutan.github@gmail.com
