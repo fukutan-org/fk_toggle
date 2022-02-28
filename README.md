@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-## fk_toggle v0.1.3
+## fk_toggle v0.1.4
 
 This is simple flutter toggle button widget.
 
