@@ -98,5 +98,6 @@ Scaffold(
 ## Contacts
 
 Feel free to send message.<br>
-Welcome to work consultation, or everything.
-fukutan.github@gmail.com
+Welcome to work consultation or everything.<br>
+Twitter:[@fukutan_org](https://twitter.com/fukutan_org)<br>
+github:[fukutan-org](https://github.com/fukutan-org)
