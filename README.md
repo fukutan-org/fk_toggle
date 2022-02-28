@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-## fk_toggle v0.1.0
+## fk_toggle v0.1.4
 
 This is simple flutter toggle button widget.
 
@@ -97,5 +97,7 @@ Scaffold(
 
 ## Contacts
 
-Feel free to work consultation.
-fukutan.github@gmail.com
+Feel free to send message.<br>
+Welcome to work consultation or everything.<br>
+Twitter:[@fukutan_org](https://twitter.com/fukutan_org)<br>
+github:[fukutan-org](https://github.com/fukutan-org)
